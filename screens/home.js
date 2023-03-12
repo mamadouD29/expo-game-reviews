@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { Text, View, Button, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Modal } from 'react-native';
 import { globalStyles } from '../styles/globalStyles';
 import Card from "../shared/card"
+import {MaterialIcons} from "@expo/vector-icons"
 
 export default function Home ({navigation}){
+    const [modalOpen, setModalOpen] = useState(false);
 
     const [reviews, setReviews] = useState([
         {key: 1, title: "Mario Bros 2", rating: 5, body: "Lorem ipsum"},
@@ -18,7 +20,18 @@ export default function Home ({navigation}){
         navigation.navigate("Details")
     }
     return (
-        <View style={globalStyles.container}>
+        <View style={globalStyles.container} >
+
+            <Modal visible ={modalOpen} animationType='slide'>
+                <View style={styles.modalContent}>
+
+                    <MaterialIcons name='close' size={24} onPress={()=>setModalOpen(false)} style={{...styles.modalToggle, ...styles.modalClose}} />
+                    <Text>Hello </Text>
+                </View>
+            </Modal>
+
+            <MaterialIcons name='add' style={styles.modalToggle} size={24} onPress={()=>setModalOpen(true)} />
+
             <FlatList data={reviews} renderItem={({item})=> (
 
                 <TouchableOpacity onPress={()=>navigation.navigate("Details",{ item})}>
@@ -31,3 +44,24 @@ export default function Home ({navigation}){
     )
 
 }
+
+
+const styles = StyleSheet.create({
+    modalContent: {
+        margin: 20,
+        flex: 1,
+    },
+    modalToggle: {
+        marginBottom: 10,
+        borderWidth:1,
+        borderColor: "#c9c7c7",
+        padding: 10,
+        alignSelf: "center",
+        borderRadius: 10,
+
+    },
+    modalClose:{
+        marginTop: 20, 
+        marginBottom: 0,
+    }
+})
