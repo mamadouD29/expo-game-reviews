@@ -16,6 +16,14 @@ export const globalStyles = StyleSheet.create({
         fontFamily: "orbitron-regular",
         lineHeight: 20,
 
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: "#eee",
+        padding: 10,
+        fontSize: 20,
+        borderRadius: 6,
+
     }
 })
 
