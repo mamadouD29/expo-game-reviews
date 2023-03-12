@@ -4,8 +4,6 @@ export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        // paddingLeft:20 ,
-        // paddingRight:20 ,
     },
     titleText: {
         fontFamily: "orbitron-regular",
@@ -15,6 +13,8 @@ export const globalStyles = StyleSheet.create({
     },
     paragraph: {
         marginVertical: 10,
+        fontFamily: "orbitron-regular",
         lineHeight: 20,
+
     }
 })

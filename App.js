@@ -10,7 +10,7 @@ import MyDrawer from './routes/drawer';
 export default function App() {
   const [fontsLoaded] = useFonts({
     "orbitron-regular": require("./assets/fonts/Orbitron-Regular.ttf"),
-    "orbitron-Bold": require("./assets/fonts/Orbitron-Bold.ttf"),
+    "orbitron-bold": require("./assets/fonts/Orbitron-Bold.ttf"),
   });
   
   if (!fontsLoaded) {
