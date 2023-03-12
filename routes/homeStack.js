@@ -18,7 +18,7 @@ export default function HomeStack (){
             <Stack.Navigator >
 
                 <Stack.Screen name='HomeStak' component={Home}  options={({navigation, route}) => ({
-                    headerTitle:()=><Header navigation={navigation} title={"Home"} />,
+                    headerTitle:()=><Header navigation={navigation} title={"GAMES"} />,
                     headerTitleStyle: {
                         fontFamily: "orbitron-regular"
                     }
