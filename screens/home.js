@@ -22,7 +22,7 @@ export default function Home ({navigation}){
         setReviews((currReviews)=>{
             return [review, ...currReviews]
         })
-        // setModalOpen(false);
+        setModalOpen(false);
     } 
 
     const pressHandler = ()=>{
